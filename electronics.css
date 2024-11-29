@@ -1,0 +1,201 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    background-color: #EFE7DD; /* 与主页背景一致 */
+    color: #2C2C2C; /* 字体颜色 */
+    padding-top: 70px; /* 根据导航栏的实际高度调整此值 */
+}
+
+/* 导航栏 */
+.navbar {
+    height: auto; /* 让内容决定高度 */
+    padding: 0.5rem 2rem; /* 调整上下内边距 */
+    background-color: #E8DCCB; /* 保持与主页一致的颜色 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 柔和的阴影 */
+    position: fixed; /* 固定位置 */
+    top: 0; /* 固定在顶部 */
+    left: 0; /* 水平从左对齐 */
+    width: 100%; /* 占据整个屏幕宽度 */
+    z-index: 1000; /* 确保导航栏在其他内容之上 */
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    margin-left: 1rem;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    padding-right: 4rem; /* 调整这个值让导航链接往左移动 */
+}
+
+.navbar .nav-links a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem; /* 与主页一致的字体大小 */
+    text-decoration: none;
+    color: #2C2C2C;
+    padding: 0.3rem 2rem; /* 减小上下内边距 */
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover {
+    color: #A57241; /* 悬停效果颜色 */
+}
+
+
+/* 项目部分 */
+.projects-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem; /* 将间距从 2rem 增大到 4rem */
+    padding: 2rem 4rem; /* 调整左右边距，增大页面两侧间距 */
+}
+
+/* 单个项目列 */
+.project-column {
+    padding: 0; /* 移除白框的内边距 */
+    margin: 0; /* 去掉外边距 */
+    box-shadow: none; /* 移除阴影 */
+    background-color: transparent; /* 设置背景为透明 */
+}
+
+/* 项目文字部分 */
+.text-section {
+    margin-bottom: 1.5rem;
+}
+
+.text-section h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.text-section p {
+    margin: 0.5rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 图片画廊 */
+.image-gallery {
+    display: flex;
+    gap: 2rem; /* 增大图片之间的间距 */
+    margin-bottom: 1.5rem;
+}
+
+.image-gallery img {
+    width: 48%; /* 保持左右图片一致宽度 */
+    height: auto; /* 保持图片比例 */
+    border-radius: 4px;
+}
+
+
+/* 视频部分 */
+.video-section iframe {
+    width: 100%;
+    height: 450px; /* 增加视频高度 */
+    border: none;
+    margin-top: 1.5rem; /* 增加顶部间距 */
+    margin-bottom: 1.5rem; /* 增加底部间距 */
+}
+
+
+
+/* 响应式适配 - 最大宽度768px */
+@media (max-width: 768px) {
+    /* 调整导航栏 */
+    .navbar {
+        padding: 0.5rem 1rem; /* 减少左右内边距 */
+    }
+
+    .brand {
+        font-size: 1.5rem; /* 缩小品牌名称字体大小 */
+        margin-left: 0.5rem; /* 减少左侧间距 */
+    }
+
+    .nav-links {
+        gap: 1rem; /* 减小链接之间的间距 */
+        padding-right: 1rem; /* 减少右侧内边距 */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* 缩小字体大小 */
+        padding: 0.2rem 0.5rem; /* 减小内外边距 */
+    }
+
+    /* 调整项目部分 */
+    .projects-section {
+        grid-template-columns: 1fr; /* 改为单列布局 */
+        gap: 2rem; /* 减小项目之间的间距 */
+        padding: 2rem; /* 减小页面内边距 */
+    }
+
+    .image-gallery img {
+        width: 100%; /* 图片宽度占满父容器 */
+        margin-bottom: 1rem; /* 增加图片之间的垂直间距 */
+    }
+
+    .video-section iframe {
+        height: 300px; /* 减小视频高度 */
+    }
+}
+
+/* 响应式适配 - 最大宽度576px */
+@media (max-width: 576px) {
+    /* 进一步调整导航栏 */
+    .navbar {
+        flex-direction: column; /* 导航栏变为垂直排列 */
+        align-items: flex-start; /* 内容左对齐 */
+        padding: 0.5rem; /* 减少整体内边距 */
+    }
+
+    .brand {
+        font-size: 1.5rem; /* 进一步缩小品牌名称字体大小 */
+        margin-bottom: 0.5rem; /* 增加与链接的间距 */
+    }
+
+    .nav-links {
+        justify-content: center; /* 让剩下的链接居中 */
+    }
+
+    .nav-links a {
+        font-size: 0.85rem; /* 缩小字体大小 */
+        padding: 0.2rem 0.5rem; /* 减小内外边距 */
+    }
+    .nav-links a[href*="home"] {
+        display: none; /* 隐藏带有 'home' 的链接 */
+    }
+    
+    /* 调整项目部分 */
+    .projects-section {
+        padding: 1rem; /* 减小页面两侧的内边距 */
+    }
+
+    .text-section h1 {
+        font-size: 1.5rem; /* 缩小标题字体 */
+    }
+
+    .text-section p {
+        font-size: 0.9rem; /* 缩小描述文字字体 */
+    }
+
+    .image-gallery img {
+        width: 100%; /* 图片仍保持全宽 */
+    }
+
+    .video-section iframe {
+        height: 250px; /* 再次减小视频高度 */
+    }
+}

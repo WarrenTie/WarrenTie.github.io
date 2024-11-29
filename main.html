@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="brand">Warren's Portfolio</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li class="dropdown">
+                    <a href="#projects">Projects</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#product-design">Product Design</a></li>
+                        <li><a href="#engineering">Engineering</a></li>
+                    </ul>
+                </li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+<section id="home" class="section home-layout">
+    <div class="welcome-text">
+        <h1>Welcome to Warren's Portfolio</h1>
+        <p>"From an unknown town to Imperial College London, fueled by a passion for UI/UX and product design, and an unstoppable drive to never give up."</p>
+    </div>
+    <div class="project-grid">
+        <div class="project-stuff">
+            <a href="projects/project1.html"><img src="images/19Portfolio.jpg" alt="Project 1"></a>
+        </div>
+        <div class="project-stuff">
+            <a href="projects/project2.html"><img src="images/SDE1.png" alt="Project 2"></a>
+        </div>
+        <div class="project-stuff">
+            <a href="projects/project3.html"><img src="images/hcde.png" alt="Project 3" style="object-position: right;"></a>
+        </div>
+        <div class="project-stuff">
+            <a href="engineering/engineering1.html"><img src="images/gizmo.png" alt="Project 4"></a>
+        </div>
+        <div class="project-stuff">
+            <a href="engineering/engineering2.html"><img src="images/fea.png" alt="Project 5"></a>
+        </div>
+        <div class="project-stuff">
+            <a href="engineering/engineering3.html"><img src="images/car.png" alt="Project 6" style="object-position: left;"></a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Me Section -->
+    <section id="about" class="about-layout">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>"Hi, I'm Warren Tie, a passionate UI/UX and product designer studying at Imperial College London. 
+                My passion lies in discovering opportunity gaps in existing markets and designing solutions to fill them. 
+                Outside of design, I enjoy cycling, traveling, and photography, constantly seeking inspiration from the world around me."</p>
+        </div>
+        <div class="about-photo">
+            <img src="images/about me.JPG" alt="Your Photo">
+        </div>
+    </section>
+    
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+    
+        <div id="product-design" class="project-category">
+            <h3>Product Design</h3>
+            <div class="my-projects-grid">
+                <div class="project-item">
+                    <a href="projects/project1.html">
+                        <img src="images/19Portfolio.jpg" alt="Project 1">
+                    </a>    
+                </div>
+                <div class="project-item">
+                    <a href="projects/project2.html">
+                        <img src="images/SDE1.png" alt="Project 2">
+                    </a>
+                </div>
+                <div class="project-item">
+                    <a href="projects/project3.html">
+                        <img src="images/hcde.png" alt="Project 3" style="object-position: right;">
+                    </a>
+                </div>
+            </div>
+            <div class="project-names">
+                <p>ChessMash - Industrial Design</p>
+                <p>BloomBums - Sustainable Design</p>
+                <p>Brickify - Human Centred Design</p>
+            </div>
+        </div>
+        
+        <div id="engineering" class="project-category">
+            <h3>Engineering</h3>
+            <div class="my-projects-grid">
+                <div class="project-item">
+                    <a href="engineering/engineering1.html"><img src="images/gizmo.png" alt="Engineering 1"></a>
+                </div>
+                <div class="project-item">
+                    <a href="engineering/engineering2.html"><img src="images/fea.png" alt="Engineering 2"></a>
+                </div>
+                <div class="project-item">
+                    <a href="engineering/engineering3.html"><img src="images/car.png" alt="Engineering 3" style="object-position: left;"></a>
+                </div>
+            </div>
+            <div class="project-names">
+                <p>Physical Computing</p>
+                <p>Finite Element Analysis</p>
+                <p>Aerodynamics</p>
+            </div>
+        </div>        
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skills-item">
+                <a href="skills/skill1.html"><img src="images/skill1.JPG" alt="Skill 1"></a>
+            </div>
+            <div class="skills-item">
+                <a href="skills/skill2.html"><img src="images/elec1.jpg" alt="Skill 2"></a>
+            </div>
+        </div>
+        <div class="skills-names">
+            <p>Photography</p>
+            <p>Electronics</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="contact-text">
+            <h3>Contact</h3>
+            <p>Feel free to reach out via email—I'd love to hear from you!</p>
+            <p><a href="mailto:tiegaomeng2022@outlook.com" class="email-link">tiegaomeng2022@outlook.com</a></p>
+        </div>
+        <div class="footer-content">
+            <img src="images/ic1.png" alt="School Logo 1" class="footer-logo">
+            <img src="images/ic2.png" alt="School Logo 2" class="footer-logo">
+            <img src="images/ic3.png" alt="School Logo 3" class="footer-logo">
+            <img src="images/ic4.png" alt="School Logo 4" class="footer-logo">
+        </div>
+    </section>    
+</body>
+</html>

@@ -1,0 +1,673 @@
+/* Global Styles */
+
+body {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    background-color: #EFE7DD;
+    color: #2C2C2C;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2rem); /* 减去左右内边距总和，确保贴合边框 */
+    margin: 0 auto; /* 居中对齐 */
+    padding: 1rem 1rem;
+    background-color: #E8DCCB;
+    border-bottom: 1px solid #D8C3A5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    margin-left: 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+.nav-links a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #8B6F4E;
+}
+
+/* 下拉菜单样式 */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* 默认隐藏 */
+    position: absolute;
+    background-color: #E8DCCB;
+    border: 1px solid #D8C3A5;
+    list-style: none;
+    padding: 0.5rem 0;
+    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #2C2C2C;
+    font-size: 1rem;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: transparent;
+    color: #A57241;
+}
+
+/* 悬停时显示菜单 */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 汉堡菜单 */
+.hamburger {
+    display: none; /* 默认隐藏 */
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1100; /* 确保在导航栏上方 */
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Sections */
+.section {
+    padding: 4rem 2rem; /* 设置内边距，确保每部分有适当的空间 */
+    text-align: center; /* 居中对齐 */
+    min-height: 100vh; /* 每个部分占据整个屏幕高度 */
+    border-bottom: 1px solid #D8C3A5; /* 添加分隔线 */
+}
+
+/* Home Section */
+/* Home Section Layout */
+.home-layout {
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: space-between; /* 左右两边对齐 */
+    min-height: 100vh; /* 占据整个视口高度 */
+    padding: 2rem;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/spanner.png');
+    background-repeat: repeat;
+    background-size: 250px 250px;
+    opacity: 0.02; /* 调整透明度 */
+    z-index: -1; /* 确保背景在文字下方 */
+}
+
+
+.welcome-text {
+    flex: 1; /* 左侧占据 50% */
+    text-align: left; /* 左对齐文字 */
+    padding-right: 2rem; /* 保持与右侧图片的间距 */
+    padding-left: 5rem; /* 添加左侧内边距，移动文字 */
+}
+
+.welcome-text h1 {
+    font-size: 3rem; /* 调整标题大小 */
+    margin-bottom: 1.5rem; /* 调整标题与段落间距 */
+    color: #2C2C2C; /* 深灰色文字 */
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+    color: #3D3D3D; /* 更深的灰色 */
+    font-style: italic; /* 设置斜体 */
+    max-width: 600px;
+}
+
+/* Project Grid on Home Page */
+.project-grid {
+    flex: 1; /* 右侧占据 50% */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 列布局 */
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.project-stuff {
+    width: 100%; /* 宽度由网格系统决定 */
+    padding-top: 100%; /* 设置高度为宽度的 100%，保证正方形 */
+    position: relative; /* 让子元素绝对定位生效 */
+    overflow: hidden; /* 确保图片不会超出容器 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 保持阴影 */
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-stuff img {
+    position: absolute; /* 绝对定位 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 图片宽度占满容器 */
+    height: 100%; /* 图片高度占满容器 */
+    object-fit: cover; /* 裁剪图片，保持内容适应正方形 */
+    border-radius: 0; /* 移除圆角 */
+}
+
+.project-stuff:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+}
+
+.project-stuff a {
+    display: block;
+    text-decoration: none;
+}
+
+/* About Me Section */
+.about-layout {
+    display: flex; /* 使用 flexbox 布局 */
+    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between; /* 两列之间保持距离 */
+    padding: 3rem 2rem; /* 设置适当的内边距 */
+    min-height: 80vh; /* 占据整个视口高度 */
+}
+
+.about-text {
+    flex: 1; /* 左侧占据 50% */
+    text-align: left; /* 左对齐文字 */
+    padding-right: 2rem; /* 与右侧图片保持距离 */
+}
+
+.about-text h2 {
+    font-size: 2.5rem; /* 标题大小 */
+    margin-bottom: 1.5rem; /* 标题和段落间距 */
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    font-family: 'Roboto', sans-serif;
+    color: #3D3D3D; /* 更深的灰色 */
+    font-style: italic; /* 设置斜体 */
+    max-width: 700px;
+}
+
+.about-photo {
+    flex: 1; /* 右侧占据 50% */
+    display: flex;
+    justify-content: center; /* 图片居中 */
+    align-items: center; /* 垂直居中 */
+}
+
+.about-photo img {
+    max-width: 110%; /* 确保图片不会超出容器 */
+    max-height: 80vh; /* 限制图片高度 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+}
+
+
+/* Projects Section */
+#projects h2 {
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif; /* 确保字体与 About Me 匹配 */
+    font-weight: bold; /* 字体加粗 */
+    text-align: center; /* 居中对齐 */
+    padding-top: 2rem;
+}
+/* 项目网格布局 */
+.my-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 保持3列布局 */
+    gap: 8rem; /* 网格间距 */
+    padding: 0 2rem; /* 左右留出空白 */
+    margin: 0 auto; /* 水平居中 */
+    box-sizing: border-box; /* 确保 padding 不影响宽度 */
+    max-width: 90%; /* 占屏幕宽度的2/3 */
+}
+
+.project-item {
+    width: 100%; /* 宽度占满父容器 */
+    height: 0; /* 高度初始为0 */
+    padding-top: 70.71%; /* A3比例（297/420 = 70.71%） */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+    position: relative; /* 允许内部图片绝对定位 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    margin: 0 auto;
+    display: block;
+}
+
+.project-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 确保图片按比例填充，并裁剪多余部分 */
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+/* 调整项目名称布局 */
+.project-names {
+    display: grid; /* 使用 grid 布局 */
+    grid-template-columns: repeat(3, 1fr); /* 确保每列的宽度均等 */
+    justify-items: center; /* 每列中的文字居中对齐 */
+    align-items: start; /* 文字在列内的顶部对齐 */
+    gap: 5rem; /* 增加列之间的间距 */
+    margin-top: 1rem; /* 控制文字与图片的垂直距离 */
+    width: 90%; /* 宽度与图片区域保持一致 */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #2C2C2C;
+    font-weight: bold;
+    text-align: center; /* 每段文字居中对齐 */
+}
+
+.project-category h3 {
+    font-size: 1.7rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: #2C2C2C;
+}
+
+
+/* Skills Section */
+#skills h2 {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10rem; /* 网格间距 */
+    padding: 0 2rem; /* 左右留出空白 */
+    margin: 0 auto; /* 水平居中 */
+    box-sizing: border-box; /* 确保 padding 不影响宽度 */
+    max-width: 80%; /* 占屏幕宽度的2/3 */
+}
+
+.skills-item {
+    width: 100%; /* 宽度占满父容器 */
+    height: 0; /* 高度初始为0 */
+    padding-top: 70.71%; /* A3比例（297/420 = 70.71%） */
+    overflow: hidden; /* 隐藏超出容器的内容 */
+    position: relative; /* 允许内部图片绝对定位 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    transition: transform 0.3s ease-in-out; /* 鼠标悬停时动画 */
+}
+
+.skills-item img {
+    position: absolute; /* 绝对定位以填满父容器 */
+    top: 0;
+    left: 0;
+    width: 100%; /* 图片宽度填满 */
+    height: 100%; /* 图片高度填满 */
+    object-fit: cover; /* 确保图片按比例填充，并裁剪多余部分 */
+}
+
+/* 悬停效果 */
+.skills-item:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 */
+}
+
+.skills-names {
+    display: grid; /* 使用 grid 布局 */
+    grid-template-columns: repeat(2, 1fr); /* 确保每列的宽度均等 */
+    justify-items: center; /* 每列中的文字居中对齐 */
+    align-items: start; /* 文字在列内的顶部对齐 */
+    gap: 7rem; /* 增加列之间的间距 */
+    margin-top: 1rem; /* 控制文字与图片的垂直距离 */
+    width: 80%; /* 宽度与图片区域保持一致 */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    color: #2C2C2C;
+    font-weight: bold;
+    text-align: center; /* 每段文字居中对齐 */
+}
+
+
+/* Contact Section */
+#contact h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center; /* 标题居中 */
+}
+
+#contact p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto; /* 文本居中 */
+    text-align: center; /* 居中对齐 */
+}
+
+#contact .footer-content {
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    gap: 10rem; /* 图片之间的间距 */
+    margin-top: 20rem; /* 调整图片与文本的距离 */
+}
+
+#contact .footer-logo {
+    max-width: 200px; /* 调整图片大小 */
+    height: auto;
+}
+.email-link {
+    font-size: 1.3rem; /* 调整字体大小 */
+    color: #A57241; /* 设置强调颜色 */
+    font-weight: bold; /* 加粗显示 */
+    text-decoration: none; /* 去掉下划线 */
+    transition: color 0.3s ease; /* 添加鼠标悬停时的过渡效果 */
+}
+
+.email-link:hover {
+    color: #8B6F4E; /* 鼠标悬停时使用的颜色 */
+    text-decoration: underline; /* 悬停时添加下划线 */
+}
+
+
+/* ----------------------------
+   Project Page Styles
+---------------------------- */
+/* 项目页面整体布局 */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background-color: #EFE7DD;
+    border-bottom: 1px solid #D8C3A5;
+}
+
+.project-header h1 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.project-info {
+    max-width: 50%;
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #3D3D3D;
+}
+
+.project-details {
+    font-style: italic;
+    margin-top: 1rem;
+    color: #A57241;
+}
+
+.project-number p {
+    font-size: 6rem;
+    color: #D8C3A5;
+    font-weight: bold;
+}
+
+.project-section {
+    padding: 3rem 2rem;
+}
+
+.project-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #2C2C2C;
+}
+
+/* 针对项目页面的导航栏样式 */
+.project-page .navbar {
+    height: 60px; /* 固定高度 */
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E8DCCB;
+}
+
+/* 导航链接始终可见 */
+.project-page .nav-links {
+    display: flex; /* 确保链接显示为 flex 布局 */
+    flex-direction: row; /* 默认水平排列 */
+    gap: 1rem; /* 链接之间的间距 */
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* 链接右对齐 */
+}
+
+/* 单个链接样式 */
+.project-page .nav-links a {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2C2C2C;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    white-space: nowrap; /* 避免文字换行 */
+    transition: color 0.3s ease-in-out;
+}
+
+.project-page .nav-links a:hover {
+    color: #A57241; /* 悬停时的文字颜色 */
+}
+
+
+
+
+
+/* 小屏幕适配 */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* 显示汉堡菜单 */
+    }
+
+    .nav-links {
+        display: none; /* 默认隐藏导航菜单 */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #D9C5B5; /* 调和的柔和深米色 */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px;
+        padding: 1rem;
+        z-index: 1000;
+        border-radius: 0 0 8px 8px; /* 添加圆角 */
+    }
+
+    .nav-links a {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #2C2C2C; /* 深灰色，适合浅色背景 */
+        text-align: left;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+        color: #f76c6c; /* 保持悬停时的颜色一致 */
+    }
+
+    /* 项目网格和技能网格 2 列布局 */
+    .project-grid,
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 列布局 */
+        gap: 1rem; /* 减小间距 */
+        padding: 0 1rem; /* 减小左右边距 */
+    }
+
+    .welcome-text {
+        padding-left: 2rem; /* 减少左边距 */
+    }
+
+    .my-projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 改为2列布局 */
+        gap: 1rem; /* 减小间距 */
+        padding: 0 1rem; /* 减小左右边距 */
+    }
+
+    .skills-names {
+        display: none; /* 隐藏技能名称 */
+    }
+
+    .project-names {
+        display: none; /* 隐藏项目名称 */
+    }
+
+    .project-page .navbar {
+        justify-content: center; /* 居中对齐 */
+    }
+
+    .project-page .nav-links {
+        flex-direction: column; /* 链接垂直排列 */
+        align-items: center; /* 居中对齐 */
+        gap: 0.5rem; /* 减少间距 */
+    }
+
+    .project-page .nav-links a {
+        font-size: 0.9rem; /* 缩小文字 */
+        padding: 0.3rem 0.5rem; /* 减少内边距 */
+    }
+}
+
+/* 更小屏幕适配 */
+@media (max-width: 576px) {
+    .brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 1rem;
+    }
+
+    /* 项目网格和技能部分 1 列布局 */
+    .project-grid,
+    .skills-grid {
+        grid-template-columns: repeat(1, 1fr); /* 1 列布局 */
+        gap: 0.5rem; /* 更小间距 */
+        padding-right: 1rem;
+    }
+
+    .welcome-text {
+        padding-left: 1rem; /* 进一步减少左边距 */
+    }
+
+    .my-projects-grid {
+        grid-template-columns: repeat(1, 1fr); /* 改为1列布局 */
+        gap: 0.5rem; /* 减小间距 */
+        padding: 0 0.5rem; /* 再次减小左右边距 */
+    }
+
+    .skills-names {
+        display: none; /* 隐藏技能名称 */
+    }
+
+    .project-names {
+        display: none; /* 隐藏项目名称 */
+    }
+
+    .project-page .navbar {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center;
+    }
+
+    .project-page .nav-links {
+        flex-direction: column;
+        gap: 0.3rem; /* 减少间距 */
+    }
+
+    .project-page .nav-links a {
+        font-size: 0.8rem; /* 再次缩小文字 */
+        padding: 0.2rem 0.4rem; /* 减少内边距 */
+    }
+}
+
+
+

@@ -1,0 +1,265 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    background-color: #EFE7DD; /* 与主页背景一致 */
+    color: #2C2C2C; /* 字体颜色 */
+    padding-top: 70px; /* 根据导航栏的实际高度调整此值 */
+}
+
+/* 导航栏 */
+.navbar {
+    height: auto; /* 让内容决定高度 */
+    padding: 0.5rem 2rem; /* 调整上下内边距 */
+    background-color: #E8DCCB; /* 保持与主页一致的颜色 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 柔和的阴影 */
+    position: fixed; /* 固定位置 */
+    top: 0; /* 固定在顶部 */
+    left: 0; /* 水平从左对齐 */
+    width: 100%; /* 占据整个屏幕宽度 */
+    z-index: 1000; /* 确保导航栏在其他内容之上 */
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    margin-left: 1rem;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    padding-right: 4rem; /* 调整这个值让导航链接往左移动 */
+}
+
+.navbar .nav-links a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem; /* 与主页一致的字体大小 */
+    text-decoration: none;
+    color: #2C2C2C;
+    padding: 0.3rem 2rem; /* 减小上下内边距 */
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover {
+    color: #A57241; /* 悬停效果颜色 */
+}
+
+/* Intro Section */
+.intro-section {
+    display: grid;
+    grid-template-columns: 3.5fr 4.5fr; /* 保持左右比例不变，图片大小不受影响 */
+    gap: 6rem; /* 增大左右区域的间距，保证文字远离图片 */
+    align-items: start; /* 顶部对齐内容 */
+    padding: 3rem 2rem; /* 保持整体的上下左右边距 */
+}
+
+.intro-left img {
+    max-width: 120%; /* 保持图片宽度为100% */
+    box-shadow: none; /* 无阴影 */
+    margin: 0 auto; /* 图片居中显示 */
+    border-radius: 4px; /* 图片圆角 */
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 从顶部开始排列内容 */
+    gap: 1.5rem; /* 文字和视频框之间保持适当间距 */
+    padding-left: 2rem; /* 让右侧文字和视频整体右移 */
+}
+
+.intro-content {
+    margin-top: 0; /* 保持文字顶部对齐 */
+    padding-right: 1rem; /* 保持右边距，避免过于贴边 */
+}
+
+.intro-content h1 {
+    font-size: 2.4rem; /* 适当缩小标题字体 */
+    font-family: 'Playfair Display', serif;
+    color: #2C2C2C;
+}
+
+.intro-content p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem; /* 缩小文字字体 */
+    line-height: 1.6; /* 调整行间距 */
+    color: #3D3D3D;
+}
+
+.video-placeholder, .video-container iframe {
+    width: 100%; /* 视频宽度适配父容器 */
+    max-width: 450px; /* 保持视频框最大宽度 */
+    height: 300px; /* 视频高度保持 */
+    margin: 0 auto; /* 水平居中 */
+    border-radius: 4px;
+    border: 1px solid #A57241; /* 视频框边框颜色 */
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem; /* 视频和文字之间间距 */
+}
+
+
+
+.details-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 左右各占一半 */
+    gap: 2rem; /* 左右间距 */
+    padding: 3rem 2rem; /* 调整内边距 */
+    background-color: #EFE7DD;
+}
+
+.details-left {
+    display: grid;
+    grid-template-rows: auto auto; /* 上下两部分 */
+    gap: 1.5rem; /* 上下部分间距 */
+}
+
+.text-section {
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.text-section h1 {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+}
+
+.text-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #3D3D3D;
+    line-height: 1.8;
+}
+
+.image-section img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.details-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.pdf-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/* 响应式适配 - 最大宽度768px */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem; /* 减少左右内边距 */
+    }
+
+    .brand {
+        font-size: 1.5rem; /* 缩小品牌名称字体大小 */
+        margin-left: 0.5rem; /* 减少左侧间距 */
+    }
+
+    .nav-links {
+        gap: 1rem; /* 减小链接之间的间距 */
+        padding-right: 1rem; /* 减少右侧内边距 */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* 缩小字体大小 */
+        padding: 0.2rem 0.5rem; /* 减小内外边距 */
+    }
+
+    .intro-section {
+        grid-template-columns: 1fr; /* 小屏幕时内容改为垂直布局 */
+        gap: 1rem; /* 缩小左右间距 */
+        padding: 2rem 1rem; /* 减少整体内边距 */
+    }
+
+    .details-section {
+        grid-template-columns: 1fr; /* 小屏幕时内容改为单列布局 */
+        gap: 1.5rem; /* 调整上下间距 */
+        padding: 2rem 1rem; /* 减少内边距 */
+    }
+
+    .text-section h1 {
+        font-size: 1.5rem; /* 缩小标题字体大小 */
+    }
+
+    .text-section p {
+        font-size: 0.9rem; /* 缩小文字字体大小 */
+    }
+
+    .pdf-placeholder {
+        height: 300px; /* 限制PDF显示区域高度 */
+    }
+}
+
+/* 响应式适配 - 最大宽度576px */
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column; /* 导航栏垂直排列 */
+        align-items: flex-start; /* 左对齐内容 */
+        padding: 0.5rem; /* 减少整体内边距 */
+    }
+
+    .brand {
+        font-size: 1.5rem; /* 缩小品牌名称字体大小 */
+        margin-bottom: 0.5rem; /* 增加与链接的间距 */
+    }
+
+    .nav-links {
+        justify-content: flex-start; /* 左对齐剩余链接 */
+    }
+
+    /* 隐藏 Home 链接 */
+    .nav-links li:first-child {
+        display: none; /* 隐藏第一个导航链接 (Home) */
+    }
+
+    .intro-section {
+        padding: 1.5rem 0.5rem; /* 减少整体内边距 */
+        gap: 0.5rem; /* 缩小文字与图片之间的间距 */
+    }
+
+    .details-section {
+        padding: 1.5rem 0.5rem; /* 减少上下左右内边距 */
+        gap: 1rem; /* 减小内容间距 */
+    }
+
+    .text-section h1 {
+        font-size: 1.2rem; /* 进一步缩小标题字体大小 */
+    }
+
+    .text-section p {
+        font-size: 0.85rem; /* 进一步缩小文字字体大小 */
+    }
+
+    .pdf-placeholder {
+        height: 250px; /* 限制PDF显示区域高度 */
+    }
+
+    .image-section img {
+        border-radius: 4px; /* 调整图片圆角大小 */
+    }
+}
+

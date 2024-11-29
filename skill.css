@@ -1,0 +1,213 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    background-color: #EFE7DD; /* 与主页背景一致 */
+    color: #2C2C2C; /* 字体颜色 */
+    padding-top: 70px; /* 根据导航栏的实际高度调整此值 */
+}
+
+/* 导航栏 */
+.navbar {
+    height: auto; /* 让内容决定高度 */
+    padding: 0.5rem 2rem; /* 调整上下内边距 */
+    background-color: #E8DCCB; /* 保持与主页一致的颜色 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 柔和的阴影 */
+    position: fixed; /* 固定位置 */
+    top: 0; /* 固定在顶部 */
+    left: 0; /* 水平从左对齐 */
+    width: 100%; /* 占据整个屏幕宽度 */
+    z-index: 1000; /* 确保导航栏在其他内容之上 */
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    margin-left: 1rem;
+}
+
+.navbar .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    padding-right: 4rem; /* 调整这个值让导航链接往左移动 */
+}
+
+.navbar .nav-links a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 1rem; /* 与主页一致的字体大小 */
+    text-decoration: none;
+    color: #2C2C2C;
+    padding: 0.3rem 2rem; /* 减小上下内边距 */
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-links a:hover {
+    color: #A57241; /* 悬停效果颜色 */
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 每行三个元素 */
+    gap: 2rem;
+}
+
+.gallery-item {
+    background-color: #FFFFFF; /* 白色背景 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 柔和阴影 */
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem; /* 添加白边 */
+    border: 1px solid #EFE7DD; /* 保持与页面背景一致的边框颜色 */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; /* 按比例缩放 */
+    aspect-ratio: 3 / 2; /* 确保图片比例为3:2 */
+    object-fit: cover; /* 确保图片不变形 */
+    margin: 0 auto; /* 居中 */
+}
+
+.image-caption {
+    margin-top: 0.5rem; /* 图片与文字之间的间距 */
+    font-size: 1rem; /* 字体大小 */
+    font-family: 'Roboto', sans-serif; /* 字体样式 */
+    color: #3D3D3D; /* 文字颜色 */
+    background-color: #FFFFFF; /* 白色背景 */
+    text-align: center; /* 文字居中 */
+    font-weight: bold; /* 设置加粗 */
+}
+
+.gallery-footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center; /* 文本居中 */
+    background-color: #EFE7DD; /* 区域背景颜色，与页面整体保持一致 */
+    color: #2C2C2C; /* 文字颜色 */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border-top: 1px solid #CCC; /* 增加顶部边框分隔 */
+}
+
+.gallery-footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.instagram-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #A57241; /* 链接颜色 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.instagram-link:hover {
+    color: #874D2C; /* 鼠标悬停时颜色变化 */
+}
+
+
+
+/* 响应式适配 - 最大宽度768px */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem; /* 减少左右内边距 */
+    }
+
+    .brand {
+        font-size: 1.5rem; /* 缩小品牌名称字体大小 */
+        margin-left: 0.5rem; /* 减少左侧间距 */
+    }
+
+    .nav-links {
+        gap: 1rem; /* 减小链接之间的间距 */
+        padding-right: 1rem; /* 减少右侧内边距 */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* 缩小字体大小 */
+        padding: 0.2rem 0.5rem; /* 减小内外边距 */
+    }
+
+    /* 调整画廊 */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 小屏幕时每行两个元素 */
+        gap: 1.5rem; /* 减少元素间距 */
+    }
+
+    .gallery-item {
+        padding: 0.5rem; /* 减少内边距 */
+    }
+
+    .image-caption {
+        font-size: 0.9rem; /* 缩小字体大小 */
+    }
+
+    .gallery-footer {
+        font-size: 0.9rem; /* 调整页脚字体大小 */
+        padding: 0.5rem; /* 减少页脚内边距 */
+    }
+}
+
+/* 响应式适配 - 最大宽度576px */
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column; /* 导航栏变为垂直排列 */
+        align-items: flex-start; /* 内容左对齐 */
+        padding: 0.5rem; /* 减少整体内边距 */
+    }
+
+    .brand {
+        font-size: 1.5rem; /* 进一步缩小品牌名称字体大小 */
+        margin-bottom: 0.5rem; /* 增加与链接的间距 */
+    }
+
+    .nav-links {
+        justify-content: center; /* 让剩下的链接居中 */
+    }
+
+    .nav-links a {
+        font-size: 0.85rem; /* 缩小字体大小 */
+        padding: 0.2rem 0.5rem; /* 减小内外边距 */
+    }
+    .nav-links a[href*="home"] {
+        display: none; /* 隐藏带有 'home' 的链接 */
+    }
+
+    /* 调整画廊 */
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 极小屏幕时每行一个元素 */
+        gap: 1rem; /* 减少元素间距 */
+    }
+
+    .gallery-item {
+        padding: 0.5rem; /* 再次减小内边距 */
+    }
+
+    .image-caption {
+        font-size: 0.85rem; /* 再次缩小字体大小 */
+    }
+
+    .gallery-footer {
+        font-size: 0.85rem; /* 调整页脚字体大小 */
+        padding: 0.5rem; /* 减少页脚内边距 */
+    }
+}
+
